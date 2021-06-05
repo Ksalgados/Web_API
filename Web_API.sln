@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web_API", "Web_API\Web_API.csproj", "{4E3DCF2A-3E9E-4629-A636-D4D36E867FAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MUSICPRO_APP", "MUSICPRO_APP\MUSICPRO_APP.csproj", "{096AB1D7-5221-427E-B350-7AA6F92A399A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4E3DCF2A-3E9E-4629-A636-D4D36E867FAE} = {4E3DCF2A-3E9E-4629-A636-D4D36E867FAE}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E3DCF2A-3E9E-4629-A636-D4D36E867FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E3DCF2A-3E9E-4629-A636-D4D36E867FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E3DCF2A-3E9E-4629-A636-D4D36E867FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E3DCF2A-3E9E-4629-A636-D4D36E867FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{096AB1D7-5221-427E-B350-7AA6F92A399A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{096AB1D7-5221-427E-B350-7AA6F92A399A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{096AB1D7-5221-427E-B350-7AA6F92A399A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{096AB1D7-5221-427E-B350-7AA6F92A399A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4954A36-FB39-4DFF-A79D-82B33A1361F3}
+	EndGlobalSection
+EndGlobal
