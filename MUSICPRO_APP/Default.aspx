@@ -6,9 +6,8 @@
         <h1>BIENVENIDOS A DISTRIBUIDORA DE INSTRUMENTOS Y ACCESORIOS MUSICALES “MUSICPRO”</h1>
         <p class="lead">En esta tienda encontraras todos tipo de producto de musica que quieras</p>
         <p>
-            <asp:Button class="btn btn-primary btn-lg" Text="Ver catalogo" ID="button1" runat="server" OnClick="button1_Click"/>
+            <a class="btn btn-primary btn-lg" href="catalogo.aspx">Catalogo</a>
         </p>
-        <asp:Label ID="label1" runat="server" Text="Label"/>
     </div>
 
     <div class="row">

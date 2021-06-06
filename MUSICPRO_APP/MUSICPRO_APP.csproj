@@ -108,9 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Connected Services\Serivicios\MUSICPRO_APP.Serivicios.HelloWorldResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
+    <Content Include="catalogo.aspx" />
     <None Include="Connected Services\Serivicios\Servicio.disco" />
     <None Include="Connected Services\Serivicios\configuration91.svcinfo" />
     <None Include="Connected Services\Serivicios\configuration.svcinfo" />
@@ -137,6 +135,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Connected Services\Serivicios\Servicio.wsdl" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -182,6 +181,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="catalogo.aspx.cs">
+      <DependentUpon>catalogo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catalogo.aspx.designer.cs">
+      <DependentUpon>catalogo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\Serivicios\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

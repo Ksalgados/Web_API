@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Web_API
 {
@@ -22,5 +24,17 @@ namespace Web_API
         {
             return "Hola a todos";
         }
+
+        [WebMethod]
+        public DataSet VerProductos()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source = DESKTOP-NH19R4N\SQLEXPRESS; Initial Catalog=musicpro; Integrated Security=True;";
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM PRODUCTOS",con);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
     }
 }

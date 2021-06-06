@@ -14,10 +14,5 @@ namespace MUSICPRO_APP
 
         }
 
-        protected void button1_Click(object sender, EventArgs e)
-        {
-            Serivicios.ServicioSoapClient miwebservices = new Serivicios.ServicioSoapClient();
-            label1.Text = miwebservices.HelloWorld();
-        }
     }
 }

@@ -9,79 +9,26 @@
 //------------------------------------------------------------------------------
 
 namespace MUSICPRO_APP.Serivicios {
+    using System.Data;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Serivicios.ServicioSoap")]
     public interface ServicioSoap {
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento HelloWorldResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        MUSICPRO_APP.Serivicios.HelloWorldResponse HelloWorld(MUSICPRO_APP.Serivicios.HelloWorldRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string HelloWorld();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<MUSICPRO_APP.Serivicios.HelloWorldResponse> HelloWorldAsync(MUSICPRO_APP.Serivicios.HelloWorldRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldRequest {
+        System.Threading.Tasks.Task<string> HelloWorldAsync();
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://tempuri.org/", Order=0)]
-        public MUSICPRO_APP.Serivicios.HelloWorldRequestBody Body;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/VerProductos", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet VerProductos();
         
-        public HelloWorldRequest() {
-        }
-        
-        public HelloWorldRequest(MUSICPRO_APP.Serivicios.HelloWorldRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class HelloWorldRequestBody {
-        
-        public HelloWorldRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://tempuri.org/", Order=0)]
-        public MUSICPRO_APP.Serivicios.HelloWorldResponseBody Body;
-        
-        public HelloWorldResponse() {
-        }
-        
-        public HelloWorldResponse(MUSICPRO_APP.Serivicios.HelloWorldResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class HelloWorldResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string HelloWorldResult;
-        
-        public HelloWorldResponseBody() {
-        }
-        
-        public HelloWorldResponseBody(string HelloWorldResult) {
-            this.HelloWorldResult = HelloWorldResult;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/VerProductos", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> VerProductosAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -111,27 +58,20 @@ namespace MUSICPRO_APP.Serivicios {
                 base(binding, remoteAddress) {
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MUSICPRO_APP.Serivicios.HelloWorldResponse MUSICPRO_APP.Serivicios.ServicioSoap.HelloWorld(MUSICPRO_APP.Serivicios.HelloWorldRequest request) {
-            return base.Channel.HelloWorld(request);
-        }
-        
         public string HelloWorld() {
-            MUSICPRO_APP.Serivicios.HelloWorldRequest inValue = new MUSICPRO_APP.Serivicios.HelloWorldRequest();
-            inValue.Body = new MUSICPRO_APP.Serivicios.HelloWorldRequestBody();
-            MUSICPRO_APP.Serivicios.HelloWorldResponse retVal = ((MUSICPRO_APP.Serivicios.ServicioSoap)(this)).HelloWorld(inValue);
-            return retVal.Body.HelloWorldResult;
+            return base.Channel.HelloWorld();
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MUSICPRO_APP.Serivicios.HelloWorldResponse> MUSICPRO_APP.Serivicios.ServicioSoap.HelloWorldAsync(MUSICPRO_APP.Serivicios.HelloWorldRequest request) {
-            return base.Channel.HelloWorldAsync(request);
+        public System.Threading.Tasks.Task<string> HelloWorldAsync() {
+            return base.Channel.HelloWorldAsync();
         }
         
-        public System.Threading.Tasks.Task<MUSICPRO_APP.Serivicios.HelloWorldResponse> HelloWorldAsync() {
-            MUSICPRO_APP.Serivicios.HelloWorldRequest inValue = new MUSICPRO_APP.Serivicios.HelloWorldRequest();
-            inValue.Body = new MUSICPRO_APP.Serivicios.HelloWorldRequestBody();
-            return ((MUSICPRO_APP.Serivicios.ServicioSoap)(this)).HelloWorldAsync(inValue);
+        public System.Data.DataSet VerProductos() {
+            return base.Channel.VerProductos();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> VerProductosAsync() {
+            return base.Channel.VerProductosAsync();
         }
     }
 }

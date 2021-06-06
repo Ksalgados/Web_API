@@ -12,6 +12,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="VerProductos">
+        <s:complexType />
+      </s:element>
+      <s:element name="VerProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerProductosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -20,10 +37,20 @@
   <wsdl:message name="HelloWorldSoapOut">
     <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
   </wsdl:message>
+  <wsdl:message name="VerProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:VerProductos" />
+  </wsdl:message>
+  <wsdl:message name="VerProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:VerProductosResponse" />
+  </wsdl:message>
   <wsdl:portType name="ServicioSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerProductos">
+      <wsdl:input message="tns:VerProductosSoapIn" />
+      <wsdl:output message="tns:VerProductosSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServicioSoap" type="tns:ServicioSoap">
@@ -37,11 +64,29 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="VerProductos">
+      <soap:operation soapAction="http://tempuri.org/VerProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServicioSoap12" type="tns:ServicioSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="HelloWorld">
       <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerProductos">
+      <soap12:operation soapAction="http://tempuri.org/VerProductos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
