@@ -16,19 +16,19 @@ namespace MUSICPRO_APP.Serivicios {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Serivicios.ServicioSoap")]
     public interface ServicioSoap {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string HelloWorld();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> HelloWorldAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/VerProductos", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet VerProductos();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/VerProductos", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> VerProductosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultar", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet consultar(string codigoLibro);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultar", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> consultarAsync(string codigoLibro);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -58,20 +58,20 @@ namespace MUSICPRO_APP.Serivicios {
                 base(binding, remoteAddress) {
         }
         
-        public string HelloWorld() {
-            return base.Channel.HelloWorld();
-        }
-        
-        public System.Threading.Tasks.Task<string> HelloWorldAsync() {
-            return base.Channel.HelloWorldAsync();
-        }
-        
         public System.Data.DataSet VerProductos() {
             return base.Channel.VerProductos();
         }
         
         public System.Threading.Tasks.Task<System.Data.DataSet> VerProductosAsync() {
             return base.Channel.VerProductosAsync();
+        }
+        
+        public System.Data.DataSet consultar(string codigoLibro) {
+            return base.Channel.consultar(codigoLibro);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> consultarAsync(string codigoLibro) {
+            return base.Channel.consultarAsync(codigoLibro);
         }
     }
 }

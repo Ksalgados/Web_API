@@ -14,6 +14,7 @@ namespace MUSICPRO_APP
         {
             ListarProductos();
         }
+
         private void ListarProductos()
         {
             Serivicios.ServicioSoapClient servicio = new Serivicios.ServicioSoapClient();
@@ -22,5 +23,15 @@ namespace MUSICPRO_APP
             GridView1.DataSource = ds;
             GridView1.DataBind();
         }
+
+        protected void btn_BuscarLibro_Click(object sender, EventArgs e)
+        {
+            Serivicios.ServicioSoapClient servicio = new Serivicios.ServicioSoapClient();
+            DataSet ds = servicio.consultar(txt_IdCodigo.Text);
+            GridView1.DataSource = ds;
+            GridView1.DataBind();
+
+        }
+
     }
 }

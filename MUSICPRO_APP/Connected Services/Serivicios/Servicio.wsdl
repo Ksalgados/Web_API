@@ -2,16 +2,6 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="HelloWorld">
-        <s:complexType />
-      </s:element>
-      <s:element name="HelloWorldResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="VerProductos">
         <s:complexType />
       </s:element>
@@ -29,34 +19,55 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="consultar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoLibro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="HelloWorldSoapIn">
-    <wsdl:part name="parameters" element="tns:HelloWorld" />
-  </wsdl:message>
-  <wsdl:message name="HelloWorldSoapOut">
-    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
-  </wsdl:message>
   <wsdl:message name="VerProductosSoapIn">
     <wsdl:part name="parameters" element="tns:VerProductos" />
   </wsdl:message>
   <wsdl:message name="VerProductosSoapOut">
     <wsdl:part name="parameters" element="tns:VerProductosResponse" />
   </wsdl:message>
+  <wsdl:message name="consultarSoapIn">
+    <wsdl:part name="parameters" element="tns:consultar" />
+  </wsdl:message>
+  <wsdl:message name="consultarSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarResponse" />
+  </wsdl:message>
   <wsdl:portType name="ServicioSoap">
-    <wsdl:operation name="HelloWorld">
-      <wsdl:input message="tns:HelloWorldSoapIn" />
-      <wsdl:output message="tns:HelloWorldSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="VerProductos">
       <wsdl:input message="tns:VerProductosSoapIn" />
       <wsdl:output message="tns:VerProductosSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="consultar">
+      <wsdl:input message="tns:consultarSoapIn" />
+      <wsdl:output message="tns:consultarSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServicioSoap" type="tns:ServicioSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="HelloWorld">
-      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+    <wsdl:operation name="VerProductos">
+      <soap:operation soapAction="http://tempuri.org/VerProductos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -64,8 +75,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="VerProductos">
-      <soap:operation soapAction="http://tempuri.org/VerProductos" style="document" />
+    <wsdl:operation name="consultar">
+      <soap:operation soapAction="http://tempuri.org/consultar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -76,8 +87,8 @@
   </wsdl:binding>
   <wsdl:binding name="ServicioSoap12" type="tns:ServicioSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="HelloWorld">
-      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+    <wsdl:operation name="VerProductos">
+      <soap12:operation soapAction="http://tempuri.org/VerProductos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -85,8 +96,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="VerProductos">
-      <soap12:operation soapAction="http://tempuri.org/VerProductos" style="document" />
+    <wsdl:operation name="consultar">
+      <soap12:operation soapAction="http://tempuri.org/consultar" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
