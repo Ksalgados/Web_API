@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Forms;
 using MessageBox = System.Windows.MessageBox;
+using Datos;
 
 namespace Web_API
 {
@@ -26,86 +27,48 @@ namespace Web_API
         [WebMethod]
         public DataSet VerProductos()
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source = DESKTOP-NH19R4N\SQLEXPRESS; Initial Catalog=musicpro; Integrated Security=True;";
+            var comando = ConfiguracionDatos.CrearComando();
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM PRODUCTOS", con);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            return ds;
+            DataSet dt = ConfiguracionDatos.CrearDataSet(comando);
+            da.Fill(dt);
+            return dt;
         }
 
         [WebMethod]
         public DataSet consultar(string codigoLibro)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source = DESKTOP-NH19R4N\SQLEXPRESS; Initial Catalog=musicpro; Integrated Security=True;";
+
+            var comando = ConfiguracionDatos.CrearComando();
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM PRODUCTOS where id='" + codigoLibro + "'", con);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            return ds;
+            DataSet dt = ConfiguracionDatos.CrearDataSet(comando);
+            da.Fill(dt);
+            return dt;
         }
 
         [WebMethod]
         public void Crear(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source = DESKTOP-NH19R4N\SQLEXPRESS; Initial Catalog=musicpro; Integrated Security=True;";
+            var comando = ConfiguracionDatos.CrearComando();
             string sentencia="INSERT INTO productos (id, nombre, descripcion, imagen, cantidad, cantidad_min, precio, tipo) VALUES ('" + id + "', '"+ nombre+"', '" + descripcion + "', '" + imagen + "','" + cantidad + "','"+cant_min+"', '"+precio+"','"+ tipo + "' )";
-            SqlCommand cmd = new SqlCommand();
-            try
-            {
-                con.Open();
-                cmd = new SqlCommand(sentencia, con);
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.ExecuteNonQuery();
-                System.Windows.Forms.MessageBox.Show("Transacción SQL ejecutada");
-            }
-            catch (Exception e)
-            {
-                System.Windows.Forms.MessageBox.Show("Error al ejecutar la transacción, el mensaje de error es: " + e.Message);
-            }
+            ConfiguracionDatos.EjecutarComando(comando);
+            
         }
 
         [WebMethod]
         public void Editar(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source = DESKTOP-NH19R4N\SQLEXPRESS; Initial Catalog=musicpro; Integrated Security=True;";
+            var comando = ConfiguracionDatos.CrearComando();
             string sentencia = "UPDATE productos SET nombre='"+nombre+"', descripcion='"+ descripcion+"', imagen='"+imagen+"', cantidad = '"+cantidad+ "', cantidad_min='"+cant_min+"', precio='"+precio+"', tipo= '"+tipo+"' where id="+id+"  ";
-            SqlCommand cmd = new SqlCommand();
-            try
-            {
-                con.Open();
-                cmd = new SqlCommand(sentencia, con);
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.ExecuteNonQuery();
-                System.Windows.Forms.MessageBox.Show("Transacción SQL ejecutada");
-            }
-            catch (Exception e)
-            {
-                System.Windows.Forms.MessageBox.Show("Error al ejecutar la transacción, el mensaje de error es: " + e.Message);
-            }
+            ConfiguracionDatos.EjecutarComando(comando);
+
         }
 
         [WebMethod]
         public void Eliminar(string codigoLibro)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source = DESKTOP-NH19R4N\SQLEXPRESS; Initial Catalog=musicpro; Integrated Security=True;";
+            var comando = ConfiguracionDatos.CrearComando();
             string sentencia = "DELETE FROM PRODUCTOS WHERE ID ='" + codigoLibro + "'";
-            SqlCommand cmd = new SqlCommand();
-            try
-            {
-                con.Open();
-                cmd = new SqlCommand(sentencia, con);
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.ExecuteNonQuery();
-                System.Windows.Forms.MessageBox.Show("Transacción SQL ejecutada");
-            }
-            catch (Exception e)
-            {
-                System.Windows.Forms.MessageBox.Show("Error al ejecutar la transacción, el mensaje de error es: " + e.Message);
-            }
+            ConfiguracionDatos.EjecutarComando(comando);
         }
     
     }

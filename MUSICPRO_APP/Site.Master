@@ -25,7 +25,6 @@
                 <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="bootstrap" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
                 <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
@@ -38,30 +37,30 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+         <header class="navbar-menu">
+             <a class="navbar-item header-logo">
+            <img src="img/logotipo-blanco.png" alt="">
+             </a>
+        <div class="navbar-end">
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/"><asp:Image ID="Image2" runat="server" Height="35px" ImageUrl="~/Content/logomusicpro.png" Width="35px"/></a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Inicio</a></li>
-                        <li><a runat="server" href="~/About">Catalogo</a></li>
-                        <li><a runat="server" href="~/Contact">Nosotros</a></li>
-                    </ul>
-                </div>
-            </div>
+            <a class="navbar-item" href="Default.aspx">
+                Home
+            </a>
+            <a class="navbar-item" href="search.aspx">
+                productos
+            </a>
+            <a  href="update.aspx" class="navbar-item" href="">
+                actualizar
+            </a>
+            <a href="actualizar.aspx" class="navbar-item" href="integrantes.html">
+                eliminar
+            </a>
         </div>
-        <div class="container body-content">
+        </header>
+     
+        <div class="body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
-            </footer>
         </div>
 
     </form>

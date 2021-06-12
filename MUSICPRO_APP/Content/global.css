@@ -1,0 +1,68 @@
+html {
+    background-color: rgb(0, 0, 0);
+    background-image: url(https://i.ytimg.com/vi/hjjc2TyYvSU/hqdefault.jpg);
+    background-position: center center;
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'global';
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+}
+
+.hero-head {}
+
+.hero-body {
+    height: auto;
+    width: 100%;
+    padding: 0px;
+}
+
+.columns {
+    padding: 0px;
+    margin: 0px;
+    height: auto;
+    width: auto;
+}
+
+.column {
+    /*
+  padding: 0px;
+  margin: 0px;
+  height: auto;
+  */
+}
+
+.hero-section {
+    width: auto;
+    height: auto;
+    background-color: seagreen;
+}
+
+.centrar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centrar-full {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.m {
+    border: 3px solid red;
+}
+
+.navbar-item img {
+    max-height: 99999px;
+}

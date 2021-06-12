@@ -1,0 +1,297 @@
+@font-face {
+    font-family: 'global';
+    src: url('CaviarDreams.ttf');
+}
+
+* {
+    font-family: 'global' !important;
+}
+
+header {
+    width: 100%;
+    background-color: rgb(24, 24, 24);
+    padding: 20px;
+    color: white;
+}
+
+header .navbar-item {
+    color: white
+}
+
+.header-logo img {
+    width: 200px !important;
+}
+
+.header-logo:hover {
+    background-color: transparent !important;
+}
+
+.header-logo img:hover {
+    background-color: transparent !important;
+}
+
+.banner {
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(https://images.pexels.com/photos/96380/pexels-photo-96380.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px;
+    text-align: center;
+    color: white;
+}
+
+.banner-logo {
+    width: 300px;
+}
+
+.pro-buttons a {
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    text-align: center;
+}
+.pro-buttons.is-gapless > .column {
+    padding: 6vw 0 !important;
+}
+
+.pro-buttons .listar {
+    background-color: rgb(19, 89, 151);
+}
+
+.pro-buttons .listar:hover {
+    background-color: rgb(30, 135, 228);
+    transition: background-color 0.7s;
+}
+
+.pro-buttons .buscar {
+    background-color: rgb(78, 161, 67);
+}
+
+.pro-buttons .buscar:hover {
+    background-color: rgb(113, 230, 97);
+    transition: background-color 0.7s;
+}
+
+.pro-buttons .agregar {
+    background-color: rgb(155, 54, 54);
+}
+
+.pro-buttons .agregar:hover {
+    background-color: rgb(223, 80, 80);
+    transition: background-color 0.7s;
+}
+
+.pro-buttons .actualizar {
+    background-color: rgb(134, 69, 109);
+}
+
+.pro-buttons .actualizar:hover {
+    background-color: rgb(235, 123, 192);
+    transition: background-color 0.7s;
+}
+
+.pro-buttons .eliminar {
+    background-color: rgb(177, 174, 38);
+}
+
+.pro-buttons .eliminar:hover {
+    background-color: rgb(224, 221, 46);
+    transition: background-color 0.7s;
+}
+
+.pro-buttons .integrantes {
+    background-color: rgb(83, 0, 0);
+}
+
+.pro-buttons .integrantes:hover {
+    background-color: rgb(224, 46, 46);
+    transition: background-color 0.7s;
+}
+
+.pro-elements {
+    padding: 2vw;
+    text-align: center;
+}
+
+    .pro-elements .column {
+        color: white !important;
+        padding: 1.25rem !important;
+    }
+
+.pro-cont {
+    width: 100%;
+    height: 100%;
+    background-color: #363636;
+    border-radius: 5px;
+    padding: 1.25rem !important;
+    box-shadow: 4px 4px 5px -3px #363636;
+}
+
+.img-element {
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+}
+
+.img-element img {
+    object-fit: contain;
+    object-position: center center;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.pro-elements h4 {
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.p-sku {
+    border-top: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(253, 253, 253);
+}
+
+.p-sku span {
+    font-weight: bold;
+    color: white;
+    background-color: rgb(60, 125, 185);
+    padding: 3px;
+}
+
+.pro-cont a {
+    color: white !important;
+    background-color: rgb(60, 125, 185);
+    outline: none;
+    border: none;
+    padding: 5px 20px;
+    margin: 10px;
+    border-radius: 3px;
+    transition: background-color 0.7s;
+    cursor: pointer;
+}
+
+.pro-cont a:hover {
+    background-color: rgb(145, 202, 255);
+    transition: background-color 0.7s
+}
+
+.pro-cont {
+    font-size: 12px;
+}
+
+.breadcumb {
+    color: white;
+    margin: 20px;
+    font-size: 30px;
+}
+
+.breadcumb span {
+    color: white;
+    border-bottom: 5px solid rgb(150, 1, 187);
+}
+
+.line-style {
+    width: 100%;
+    height: 10px;
+    background-image: url(https://images.pexels.com/photos/96380/pexels-photo-96380.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: blur(5px);
+}
+
+.search {
+    text-align: center;
+    color: white;
+}
+
+.form-estructure{
+    padding:0 30vw;
+    
+}
+.form-estructure label{
+    color: white;
+}
+.form-estructure::placeholder{
+    color: rgb(54, 54, 54);
+}
+@media(max-width:1200px) {
+    .navbar-menu {
+        display: block;
+        background-color: rgb(24, 24, 24);
+        text-align: center;
+    }
+    .banner {
+        padding: 10px;
+    }
+    .banner-logo {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-estructure{
+        padding:0 5vw;
+        
+    }
+    .pro-elements {
+        padding: 2vw;
+        text-align: center;
+    }
+    .pro-elements .column {
+        color: white !important;
+        padding: 0.25rem !important;
+    }
+    .pro-cont {
+        width: 100%;
+        height: 100%;
+        background-color: #363636;
+        border-radius: 5px;
+        padding: 0.25rem !important;
+    }
+    .img-element {
+        overflow: hidden;
+        width: 100%;
+        height: 200px;
+    }
+    .img-element img {
+        object-fit: contain;
+        object-position: center center;
+        height: 100% !important;
+        width: 100% !important;
+    }
+    .pro-elements h4 {
+        font-weight: bolder;
+        font-size: 18px;
+    }
+    .p-sku {
+        border-top: 1px solid rgb(255, 255, 255);
+        border-bottom: 1px solid rgb(253, 253, 253);
+    }
+    .p-sku span {
+        font-weight: bold;
+        color: white;
+        background-color: rgb(60, 125, 185);
+        padding: 3px;
+    }
+    .pro-cont a {
+        color: white !important;
+        background-color: rgb(60, 125, 185);
+        outline: none;
+        border: none;
+        padding: 5px 20px;
+        margin: 10px;
+        border-radius: 3px;
+    }
+    .pro-cont {
+        font-size: 12px;
+    }
+    .breadcumb {
+        color: white;
+        margin: 20px;
+        font-size: 34px;
+    }
+}
