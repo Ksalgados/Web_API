@@ -78,13 +78,13 @@ namespace MUSICPRO_APP
         protected global::System.Web.UI.WebControls.TextBox txt_precio;
 
         /// <summary>
-        /// Control txt_tipo.
+        /// Control list_tipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tipo;
+        protected global::System.Web.UI.WebControls.DropDownList list_tipo;
 
         /// <summary>
         /// Control btn_agregar.

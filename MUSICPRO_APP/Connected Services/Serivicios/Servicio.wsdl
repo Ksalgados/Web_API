@@ -40,6 +40,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="tipos">
+        <s:complexType />
+      </s:element>
+      <s:element name="tiposResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tiposResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Crear">
         <s:complexType>
           <s:sequence>
@@ -98,6 +115,12 @@
   <wsdl:message name="consultarSoapOut">
     <wsdl:part name="parameters" element="tns:consultarResponse" />
   </wsdl:message>
+  <wsdl:message name="tiposSoapIn">
+    <wsdl:part name="parameters" element="tns:tipos" />
+  </wsdl:message>
+  <wsdl:message name="tiposSoapOut">
+    <wsdl:part name="parameters" element="tns:tiposResponse" />
+  </wsdl:message>
   <wsdl:message name="CrearSoapIn">
     <wsdl:part name="parameters" element="tns:Crear" />
   </wsdl:message>
@@ -125,6 +148,10 @@
       <wsdl:input message="tns:consultarSoapIn" />
       <wsdl:output message="tns:consultarSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="tipos">
+      <wsdl:input message="tns:tiposSoapIn" />
+      <wsdl:output message="tns:tiposSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Crear">
       <wsdl:input message="tns:CrearSoapIn" />
       <wsdl:output message="tns:CrearSoapOut" />
@@ -151,6 +178,15 @@
     </wsdl:operation>
     <wsdl:operation name="consultar">
       <soap:operation soapAction="http://tempuri.org/consultar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tipos">
+      <soap:operation soapAction="http://tempuri.org/tipos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -199,6 +235,15 @@
     </wsdl:operation>
     <wsdl:operation name="consultar">
       <soap12:operation soapAction="http://tempuri.org/consultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tipos">
+      <soap12:operation soapAction="http://tempuri.org/tipos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

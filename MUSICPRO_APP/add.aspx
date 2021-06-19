@@ -29,7 +29,7 @@
                   <asp:TextBox ID="txt_precio" TextMode="Number" runat="server"></asp:TextBox><br />
                 <br />
                 <span>tipo</span>
-                  <asp:TextBox ID="txt_tipo" runat="server"></asp:TextBox><br />
+                  <asp:DropDownList ID="list_tipo" runat="server"></asp:DropDownList><br />
                 <br />
 
 

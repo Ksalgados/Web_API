@@ -30,6 +30,13 @@ namespace MUSICPRO_APP.Serivicios {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultar", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> consultarAsync(string codigoLibro);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/tipos", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet tipos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/tipos", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> tiposAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Crear", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         void Crear(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo);
@@ -93,6 +100,14 @@ namespace MUSICPRO_APP.Serivicios {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> consultarAsync(string codigoLibro) {
             return base.Channel.consultarAsync(codigoLibro);
+        }
+        
+        public System.Data.DataSet tipos() {
+            return base.Channel.tipos();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> tiposAsync() {
+            return base.Channel.tiposAsync();
         }
         
         public void Crear(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo) {

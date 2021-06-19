@@ -13,6 +13,7 @@ using System.Windows;
 using System.Windows.Forms;
 using MessageBox = System.Windows.MessageBox;
 using Datos;
+using Web_API.Data;
 
 namespace Web_API
 {
@@ -27,48 +28,66 @@ namespace Web_API
         [WebMethod]
         public DataSet VerProductos()
         {
-            var comando = ConfiguracionDatos.CrearComando();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM PRODUCTOS", con);
-            DataSet dt = ConfiguracionDatos.CrearDataSet(comando);
-            da.Fill(dt);
+            string cadenaConexion = ConexionDatos.CadenaConexion;
+            SqlConnection conexion = new SqlConnection { ConnectionString = cadenaConexion };
+            SqlCommand sql = new SqlCommand("SELECT * FROM PRODUCTOS", conexion);
+            DataSet dt = ConfiguracionDatos.CrearDataSet(sql);
             return dt;
         }
 
         [WebMethod]
         public DataSet consultar(string codigoLibro)
         {
+            string cadenaConexion = ConexionDatos.CadenaConexion;
+            SqlConnection conexion = new SqlConnection { ConnectionString = cadenaConexion };
+            SqlCommand sql = new SqlCommand("SELECT * FROM LibreriaVirtual.dbo.PRODUCTOS WHERE id='" + codigoLibro + "'", conexion);
+            DataSet dt = ConfiguracionDatos.CrearDataSet(sql);
 
-            var comando = ConfiguracionDatos.CrearComando();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM PRODUCTOS where id='" + codigoLibro + "'", con);
-            DataSet dt = ConfiguracionDatos.CrearDataSet(comando);
-            da.Fill(dt);
+            return dt;
+        }
+
+
+        [WebMethod]
+        public DataSet tipos()
+        {
+            string cadenaConexion = ConexionDatos.CadenaConexion;
+            SqlConnection conexion = new SqlConnection { ConnectionString = cadenaConexion };
+            SqlCommand sql = new SqlCommand("SELECT * FROM LibreriaVirtual.dbo.TIPO_PRODUCTO ", conexion);
+            DataSet dt = ConfiguracionDatos.CrearDataSet(sql);
+
             return dt;
         }
 
         [WebMethod]
         public void Crear(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo)
         {
-            var comando = ConfiguracionDatos.CrearComando();
-            string sentencia="INSERT INTO productos (id, nombre, descripcion, imagen, cantidad, cantidad_min, precio, tipo) VALUES ('" + id + "', '"+ nombre+"', '" + descripcion + "', '" + imagen + "','" + cantidad + "','"+cant_min+"', '"+precio+"','"+ tipo + "' )";
-            ConfiguracionDatos.EjecutarComando(comando);
+            string sentencia="INSERT INTO productos (id, nombre, descripcion, imagen, cantidad, cantidad_min, precio, id_tipo) VALUES ('" + id + "', '"+ nombre+"', '" + descripcion + "', '" + imagen + "','" + cantidad + "','"+cant_min+"', '"+precio+"','"+ tipo + "' )";
+            string cadenaConexion = ConexionDatos.CadenaConexion;
+            SqlConnection conexion = new SqlConnection { ConnectionString = cadenaConexion };
+            SqlCommand sql = new SqlCommand(sentencia, conexion);
+            ConfiguracionDatos.EjecutarComando(sql);
             
         }
 
         [WebMethod]
         public void Editar(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo)
         {
-            var comando = ConfiguracionDatos.CrearComando();
-            string sentencia = "UPDATE productos SET nombre='"+nombre+"', descripcion='"+ descripcion+"', imagen='"+imagen+"', cantidad = '"+cantidad+ "', cantidad_min='"+cant_min+"', precio='"+precio+"', tipo= '"+tipo+"' where id="+id+"  ";
-            ConfiguracionDatos.EjecutarComando(comando);
+            string sentencia = "UPDATE productos SET nombre='"+nombre+"', descripcion='"+ descripcion+"', imagen='"+imagen+"', cantidad = '"+cantidad+ "', cantidad_min='"+cant_min+"', precio='"+precio+"', tipo= '"+tipo+"' where id="+id+"  ";            
+            string cadenaConexion = ConexionDatos.CadenaConexion;
+            SqlConnection conexion = new SqlConnection { ConnectionString = cadenaConexion };
+            SqlCommand sql = new SqlCommand(sentencia, conexion);
+            ConfiguracionDatos.EjecutarComando(sql);
 
         }
 
         [WebMethod]
         public void Eliminar(string codigoLibro)
         {
-            var comando = ConfiguracionDatos.CrearComando();
             string sentencia = "DELETE FROM PRODUCTOS WHERE ID ='" + codigoLibro + "'";
-            ConfiguracionDatos.EjecutarComando(comando);
+            string cadenaConexion = ConexionDatos.CadenaConexion;
+            SqlConnection conexion = new SqlConnection { ConnectionString = cadenaConexion };
+            SqlCommand sql = new SqlCommand(sentencia, conexion);
+            ConfiguracionDatos.EjecutarComando(sql);
         }
     
     }
