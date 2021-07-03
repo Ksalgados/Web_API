@@ -13,13 +13,13 @@ namespace MUSICPRO_APP
         {
 
         }
-             protected void btn_EliminarLibro_Click(object sender, EventArgs e)
+        protected void btn_EliminarLibro_Click(object sender, EventArgs e)
         {
             Serivicios.ServicioSoapClient servicio = new Serivicios.ServicioSoapClient();
 
-            //lbl_Resultado" disabled="disable";
-                servicio.Eliminar(txt_IdCodigo.Text);
-//                lbl_Resultado.Text = "Eliminado";
+            pText.InnerText = servicio.Eliminar(txt_IdCodigo.Text);
+
+            divModal.Attributes.Add("class", "windowText block");
         }
 
     }

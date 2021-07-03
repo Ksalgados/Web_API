@@ -3,6 +3,9 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
        <div class="line-style"></div>
     <h2 class="breadcumb">Eliminar <span>producto</span></h2>
+     <div style="display:none;"  class="windowText" id="divModal" runat="server" >
+        <p  id="pText" runat="server">Creado</p>
+    </div>
     <div class="row search">
             <div class="col-sm-12 bob">
                 <p class="lead">Eliminar  por Código</p>

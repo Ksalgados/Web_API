@@ -8,7 +8,7 @@ namespace Web_API.Data
     public class ConexionDatos
     {
         //cadena de franco, do not remove pliz
-        //private const string cadenaConexion = @"Data Source=LAPTOP-IJENOHCL\SQLEXPRESS; Initial Catalog=Integracion; Integrated Security=True";
+        private const string cadenaConexion = @"Data Source=LAPTOP-IJENOHCL\SQLEXPRESS; Initial Catalog=Integracion; Integrated Security=True";
         
         
         //private const string cadenaConexion = @"Data Source=LAPTOP-IJENOHCL\SQLEXPRESS; Initial Catalog=Integracion; Integrated Security=True";

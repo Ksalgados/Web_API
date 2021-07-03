@@ -46,17 +46,17 @@ namespace MUSICPRO_APP.Serivicios {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Editar", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        void Editar(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo);
+        string Editar(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Editar", ReplyAction="*")]
-        System.Threading.Tasks.Task EditarAsync(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo);
+        System.Threading.Tasks.Task<string> EditarAsync(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Eliminar", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        void Eliminar(string codigoLibro);
+        string Eliminar(string codigoLibro);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Eliminar", ReplyAction="*")]
-        System.Threading.Tasks.Task EliminarAsync(string codigoLibro);
+        System.Threading.Tasks.Task<string> EliminarAsync(string codigoLibro);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearUsuario", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -67,10 +67,10 @@ namespace MUSICPRO_APP.Serivicios {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidUsuario", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        void ValidUsuario(string email, string password);
+        bool ValidUsuario(string email, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidUsuario", ReplyAction="*")]
-        System.Threading.Tasks.Task ValidUsuarioAsync(string email, string password);
+        System.Threading.Tasks.Task<bool> ValidUsuarioAsync(string email, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -132,19 +132,19 @@ namespace MUSICPRO_APP.Serivicios {
             return base.Channel.CrearAsync(nombre, descripcion, imagen, cantidad, cant_min, precio, tipo);
         }
         
-        public void Editar(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo) {
-            base.Channel.Editar(id, nombre, descripcion, imagen, cantidad, cant_min, precio, tipo);
+        public string Editar(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo) {
+            return base.Channel.Editar(id, nombre, descripcion, imagen, cantidad, cant_min, precio, tipo);
         }
         
-        public System.Threading.Tasks.Task EditarAsync(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo) {
+        public System.Threading.Tasks.Task<string> EditarAsync(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo) {
             return base.Channel.EditarAsync(id, nombre, descripcion, imagen, cantidad, cant_min, precio, tipo);
         }
         
-        public void Eliminar(string codigoLibro) {
-            base.Channel.Eliminar(codigoLibro);
+        public string Eliminar(string codigoLibro) {
+            return base.Channel.Eliminar(codigoLibro);
         }
         
-        public System.Threading.Tasks.Task EliminarAsync(string codigoLibro) {
+        public System.Threading.Tasks.Task<string> EliminarAsync(string codigoLibro) {
             return base.Channel.EliminarAsync(codigoLibro);
         }
         
@@ -156,11 +156,11 @@ namespace MUSICPRO_APP.Serivicios {
             return base.Channel.CrearUsuarioAsync(id, nombre, email, password, tipo_usuarios);
         }
         
-        public void ValidUsuario(string email, string password) {
-            base.Channel.ValidUsuario(email, password);
+        public bool ValidUsuario(string email, string password) {
+            return base.Channel.ValidUsuario(email, password);
         }
         
-        public System.Threading.Tasks.Task ValidUsuarioAsync(string email, string password) {
+        public System.Threading.Tasks.Task<bool> ValidUsuarioAsync(string email, string password) {
             return base.Channel.ValidUsuarioAsync(email, password);
         }
     }

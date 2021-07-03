@@ -295,3 +295,25 @@ header .navbar-item {
         font-size: 34px;
     }
 }
+
+/*------------------------------------*/
+
+.windowText {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: 0;
+    display: none;
+    margin: 0 auto;
+    width: 300px;
+    height: auto;
+    padding:50px 0;
+    background-color: blue;
+    color:white;
+    text-align:center;
+    
+}
+
+.block{
+    display:block !important;
+}

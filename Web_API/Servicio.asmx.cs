@@ -45,7 +45,7 @@ namespace Web_API
 
             return dt;
         }
-        public DataSet getCategories()
+       /* public DataSet getCategories()
         {
             string cadenaConexion = ConexionDatos.CadenaConexion;
             SqlConnection conexion = new SqlConnection { ConnectionString = cadenaConexion };
@@ -53,7 +53,7 @@ namespace Web_API
             DataSet dt = ConfiguracionDatos.CrearDataSet(sql);
 
             return dt;
-        }
+        }*/
 
 
         [WebMethod]
@@ -75,30 +75,40 @@ namespace Web_API
             string cadenaConexion = ConexionDatos.CadenaConexion;
             SqlConnection conexion = new SqlConnection { ConnectionString = cadenaConexion };
             SqlCommand sql = new SqlCommand(sentencia, conexion);
-            ConfiguracionDatos.EjecutarComando(sql);
-
-            return "listo";
+           
+            if (ConfiguracionDatos.EjecutarComando(sql)==1)
+            {
+            return "producto "+nombre+ " creado!";
+            }
+            return "Error al crear";
         }
 
         [WebMethod]
-        public void Editar(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo)
+        public String Editar(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo)
         {
-            string sentencia = "UPDATE productos SET nombre='"+nombre+"', descripcion='"+ descripcion+"', imagen='"+imagen+"', cantidad = '"+cantidad+ "', cantidad_min='"+cant_min+"', precio='"+precio+"', tipo= '"+tipo+"' where id="+id+"  ";            
+            string sentencia = "UPDATE productos SET nombre='"+nombre+"', descripcion='"+ descripcion+"', imagen='"+imagen+"', cantidad = '"+cantidad+ "', cantidad_min='"+cant_min+"', precio='"+precio+"', id_tipo= '"+tipo+"' where id="+id+"  ";            
             string cadenaConexion = ConexionDatos.CadenaConexion;
             SqlConnection conexion = new SqlConnection { ConnectionString = cadenaConexion };
             SqlCommand sql = new SqlCommand(sentencia, conexion);
-            ConfiguracionDatos.EjecutarComando(sql);
-
+            if (ConfiguracionDatos.EjecutarComando(sql) == 1)
+            {
+                return "producto " + nombre + " actualizado!";
+            }
+            return "Error al actualizar";
         }
 
         [WebMethod]
-        public void Eliminar(string codigoLibro)
+        public String Eliminar(string codigoLibro)
         {
             string sentencia = "DELETE FROM PRODUCTOS WHERE ID ='" + codigoLibro + "'";
             string cadenaConexion = ConexionDatos.CadenaConexion;
             SqlConnection conexion = new SqlConnection { ConnectionString = cadenaConexion };
             SqlCommand sql = new SqlCommand(sentencia, conexion);
-            ConfiguracionDatos.EjecutarComando(sql);
+            if (ConfiguracionDatos.EjecutarComando(sql) == 1)
+            {
+                return "Libro n°: " + codigoLibro + " Eliminado!";
+            }
+            return "Error al eliminar";
         }
 
         [WebMethod]
@@ -114,13 +124,17 @@ namespace Web_API
 
 
         [WebMethod]
-        public void ValidUsuario(string email, string password)
+        public Boolean ValidUsuario(string email, string password)
         {
             string sentencia = "SELECT * FROM USERS where email'"+ email +"' and password='"+ password +"'";
             string cadenaConexion = ConexionDatos.CadenaConexion;
             SqlConnection conexion = new SqlConnection { ConnectionString = cadenaConexion };
             SqlCommand sql = new SqlCommand(sentencia, conexion);
-            ConfiguracionDatos.EjecutarComando(sql);
+            if (ConfiguracionDatos.EjecutarComando(sql) == 1)
+            {
+                return true;
+            }
+            return false;
         }
 
         public int maxID()
@@ -133,6 +147,8 @@ namespace Web_API
                  
             return Convert.ToInt32(dt.Tables[0].Rows[0]["Column1"].ToString())+1;
         }
+
+       
 
     }
 

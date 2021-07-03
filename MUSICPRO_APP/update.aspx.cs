@@ -17,7 +17,8 @@ namespace MUSICPRO_APP
           protected void btn_ActualizarLibro_Click(object sender, EventArgs e)
         {
             Serivicios.ServicioSoapClient servicio = new Serivicios.ServicioSoapClient();
-            servicio.Editar(Int32.Parse(txt_id.Text), txt_nombre.Text, txt_descripcion.Text, txt_imagen.Text, Int32.Parse(txt_cantidad.Text), Int32.Parse(txt_cantidadmin.Text), Int32.Parse(txt_precio.Text), txt_tipo.Text);
+            pText.InnerText = servicio.Editar(Int32.Parse(txt_id.Text), txt_nombre.Text, txt_descripcion.Text, txt_imagen.Text, Int32.Parse(txt_cantidad.Text), Int32.Parse(txt_cantidadmin.Text), Int32.Parse(txt_precio.Text), txt_tipo.Text);
+            divModal.Attributes.Add("class", "windowText block");
         }
 
 

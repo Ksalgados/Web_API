@@ -27,7 +27,9 @@ namespace MUSICPRO_APP
           protected void btn_AgregarLibro_Click(object sender, EventArgs e)
         {
             Serivicios.ServicioSoapClient servicio = new Serivicios.ServicioSoapClient();
-            servicio.Crear(txt_nombre.Text, txt_descripcion.Text, txt_imagen.Text, Int32.Parse(txt_cantidad.Text), Int32.Parse(txt_cantidadmin.Text), Int32.Parse(txt_precio.Text), list_tipo.SelectedValue);
+            pText.InnerText =servicio.Crear(txt_nombre.Text, txt_descripcion.Text, txt_imagen.Text, Int32.Parse(txt_cantidad.Text), Int32.Parse(txt_cantidadmin.Text), Int32.Parse(txt_precio.Text), list_tipo.SelectedValue);
+           
+            divModal.Attributes.Add("class", "windowText block");
 
         }
 

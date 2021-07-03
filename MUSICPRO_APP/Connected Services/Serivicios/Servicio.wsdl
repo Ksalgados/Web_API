@@ -92,7 +92,11 @@
         </s:complexType>
       </s:element>
       <s:element name="EditarResponse">
-        <s:complexType />
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
       </s:element>
       <s:element name="Eliminar">
         <s:complexType>
@@ -102,7 +106,11 @@
         </s:complexType>
       </s:element>
       <s:element name="EliminarResponse">
-        <s:complexType />
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
       </s:element>
       <s:element name="CrearUsuario">
         <s:complexType>
@@ -127,7 +135,11 @@
         </s:complexType>
       </s:element>
       <s:element name="ValidUsuarioResponse">
-        <s:complexType />
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
       </s:element>
     </s:schema>
   </wsdl:types>
