@@ -37,6 +37,8 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+        <script src="Scripts/pop_pup.js"></script>
+        <link href="Content/pop_pup.css" rel="stylesheet" />
          <header class="navbar-menu">
              <a class="navbar-item header-logo">
             <img src="img/logotipo-blanco.png" alt="">
@@ -49,12 +51,13 @@
             <a class="navbar-item" href="search.aspx">
                 productos
             </a>
-            <a  href="update.aspx" class="navbar-item" href="">
+            <a  href="update.aspx" class="navbar-item">
                 actualizar
             </a>
-            <a href="actualizar.aspx" class="navbar-item" href="integrantes.html">
+            <a href="actualizar.aspx" class="navbar-item">
                 eliminar
             </a>
+             <button id="popup" class="navbar-item" runat="server">Login</button>
         </div>
         </header>
      

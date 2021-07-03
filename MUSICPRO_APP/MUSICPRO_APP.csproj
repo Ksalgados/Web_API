@@ -125,6 +125,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Actualizar.aspx" />
+    <Content Include="add.aspx" />
     <None Include="Connected Services\Serivicios\Servicio.disco" />
     <None Include="Connected Services\Serivicios\configuration91.svcinfo" />
     <None Include="Connected Services\Serivicios\configuration.svcinfo" />
@@ -132,7 +133,8 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="add.aspx" />
+    <Content Include="Content\pop_pup.css" />
+    <Content Include="Scripts\pop_pup.js" />
     <Content Include="search.aspx" />
     <Content Include="Content\bulma.min.css" />
     <Content Include="Content\global.css" />

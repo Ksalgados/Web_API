@@ -7,29 +7,33 @@
 
             <div class="col-sm-12 bob">
                 <p class="lead">Agregar  producto</p>
-                <span>Id</span>
-                <asp:TextBox ID="txt_id" TextMode="Number" runat="server"></asp:TextBox><br />
                 <br />
                 <span>nombre</span>
+                <br />
                    <asp:TextBox ID="txt_nombre" runat="server"></asp:TextBox><br />
                 <br />
                 <span>Descripción</span>
+                <br />
                    <asp:TextBox ID="txt_descripcion" runat="server"></asp:TextBox><br />
                 <br />
                 <span>imagen</span>
+                <br />
                    <asp:TextBox ID="txt_imagen"  runat="server"></asp:TextBox><br />
                 <br />
                 <span>cantidad</span>
+                <br />
                    <asp:TextBox ID="txt_cantidad" TextMode="Number" runat="server"></asp:TextBox><br />
                 <br />
                 <span>cantidad minima</span>
+                <br />
                     <asp:TextBox ID="txt_cantidadmin" TextMode="Number" runat="server"></asp:TextBox><br />
                 <br />
                 <span>precio</span>
+                <br />
                   <asp:TextBox ID="txt_precio" TextMode="Number" runat="server"></asp:TextBox><br />
                 <br />
                 <span>tipo</span>
-                  <asp:DropDownList ID="list_tipo" runat="server"></asp:DropDownList><br />
+                  <asp:DropDownList ID="list_tipo" runat="server" OnSelectedIndexChanged="list_tipo_SelectedIndexChanged"></asp:DropDownList><br />
                 <br />
 
 

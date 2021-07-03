@@ -39,10 +39,10 @@ namespace MUSICPRO_APP.Serivicios {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Crear", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        void Crear(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo);
+        string Crear(string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Crear", ReplyAction="*")]
-        System.Threading.Tasks.Task CrearAsync(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo);
+        System.Threading.Tasks.Task<string> CrearAsync(string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Editar", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -57,6 +57,20 @@ namespace MUSICPRO_APP.Serivicios {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Eliminar", ReplyAction="*")]
         System.Threading.Tasks.Task EliminarAsync(string codigoLibro);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearUsuario", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void CrearUsuario(int id, string nombre, string email, string password, int tipo_usuarios);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CrearUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task CrearUsuarioAsync(int id, string nombre, string email, string password, int tipo_usuarios);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidUsuario", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void ValidUsuario(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task ValidUsuarioAsync(string email, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -110,12 +124,12 @@ namespace MUSICPRO_APP.Serivicios {
             return base.Channel.tiposAsync();
         }
         
-        public void Crear(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo) {
-            base.Channel.Crear(id, nombre, descripcion, imagen, cantidad, cant_min, precio, tipo);
+        public string Crear(string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo) {
+            return base.Channel.Crear(nombre, descripcion, imagen, cantidad, cant_min, precio, tipo);
         }
         
-        public System.Threading.Tasks.Task CrearAsync(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo) {
-            return base.Channel.CrearAsync(id, nombre, descripcion, imagen, cantidad, cant_min, precio, tipo);
+        public System.Threading.Tasks.Task<string> CrearAsync(string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo) {
+            return base.Channel.CrearAsync(nombre, descripcion, imagen, cantidad, cant_min, precio, tipo);
         }
         
         public void Editar(int id, string nombre, string descripcion, string imagen, int cantidad, int cant_min, int precio, string tipo) {
@@ -132,6 +146,22 @@ namespace MUSICPRO_APP.Serivicios {
         
         public System.Threading.Tasks.Task EliminarAsync(string codigoLibro) {
             return base.Channel.EliminarAsync(codigoLibro);
+        }
+        
+        public void CrearUsuario(int id, string nombre, string email, string password, int tipo_usuarios) {
+            base.Channel.CrearUsuario(id, nombre, email, password, tipo_usuarios);
+        }
+        
+        public System.Threading.Tasks.Task CrearUsuarioAsync(int id, string nombre, string email, string password, int tipo_usuarios) {
+            return base.Channel.CrearUsuarioAsync(id, nombre, email, password, tipo_usuarios);
+        }
+        
+        public void ValidUsuario(string email, string password) {
+            base.Channel.ValidUsuario(email, password);
+        }
+        
+        public System.Threading.Tasks.Task ValidUsuarioAsync(string email, string password) {
+            return base.Channel.ValidUsuarioAsync(email, password);
         }
     }
 }
