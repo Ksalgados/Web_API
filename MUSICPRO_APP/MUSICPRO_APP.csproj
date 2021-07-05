@@ -133,8 +133,20 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Administrador\dashboard_admin.aspx" />
+    <Content Include="Administrador\Empleados.aspx" />
+    <Content Include="Administrador\Informes.aspx" />
+    <Content Include="Administrador\Productos.aspx" />
+    <Content Include="Bodegero\dashboard_bodegero.aspx" />
+    <Content Include="Bodegero\Productos.aspx" />
+    <Content Include="Contacto.aspx" />
+    <Content Include="Contador\Dashboard_contador.aspx" />
+    <Content Include="Contador\Pagos.aspx" />
+    <Content Include="Contador\Productos.aspx" />
     <Content Include="Content\pop_pup.css" />
+    <Content Include="Content\styles.css" />
     <Content Include="login.aspx" />
+    <Content Include="Productos.aspx" />
     <Content Include="Scripts\pop_pup.js" />
     <Content Include="search.aspx" />
     <Content Include="Content\bulma.min.css" />
@@ -186,6 +198,9 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="update.aspx" />
+    <Content Include="Vendedor\dashboard_vendedor.aspx" />
+    <Content Include="Vendedor\Pagos.aspx" />
+    <Content Include="Vendedor\Productos.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -206,6 +221,34 @@
     <Compile Include="add.aspx.designer.cs">
       <DependentUpon>add.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\dashboard_admin.aspx.cs">
+      <DependentUpon>dashboard_admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\dashboard_admin.aspx.designer.cs">
+      <DependentUpon>dashboard_admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Empleados.aspx.cs">
+      <DependentUpon>Empleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\Empleados.aspx.designer.cs">
+      <DependentUpon>Empleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Informes.aspx.cs">
+      <DependentUpon>Informes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\Informes.aspx.designer.cs">
+      <DependentUpon>Informes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Productos.aspx.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\Productos.aspx.designer.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -215,10 +258,52 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Bodegero\dashboard_bodegero.aspx.cs">
+      <DependentUpon>dashboard_bodegero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bodegero\dashboard_bodegero.aspx.designer.cs">
+      <DependentUpon>dashboard_bodegero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bodegero\Productos.aspx.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bodegero\Productos.aspx.designer.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\Serivicios\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contador\Dashboard_contador.aspx.cs">
+      <DependentUpon>Dashboard_contador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contador\Dashboard_contador.aspx.designer.cs">
+      <DependentUpon>Dashboard_contador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contador\Pagos.aspx.cs">
+      <DependentUpon>Pagos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contador\Pagos.aspx.designer.cs">
+      <DependentUpon>Pagos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contador\Productos.aspx.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contador\Productos.aspx.designer.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -226,6 +311,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Productos.aspx.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Productos.aspx.designer.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
     </Compile>
     <Compile Include="search.aspx.cs">
       <DependentUpon>search.aspx</DependentUpon>
@@ -265,6 +357,27 @@
     </Compile>
     <Compile Include="update.aspx.designer.cs">
       <DependentUpon>update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vendedor\dashboard_vendedor.aspx.cs">
+      <DependentUpon>dashboard_vendedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendedor\dashboard_vendedor.aspx.designer.cs">
+      <DependentUpon>dashboard_vendedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vendedor\Pagos.aspx.cs">
+      <DependentUpon>Pagos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendedor\Pagos.aspx.designer.cs">
+      <DependentUpon>Pagos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vendedor\Productos.aspx.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendedor\Productos.aspx.designer.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

@@ -11,7 +11,7 @@ namespace MUSICPRO_APP
 {
 
 
-    public partial class About
+    public partial class Contacto
     {
     }
 }

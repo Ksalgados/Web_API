@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace MUSICPRO_APP
+namespace MUSICPRO_APP.Administrador
 {
 
 
-    public partial class About
+    public partial class Productos
     {
     }
 }

@@ -1,71 +1,78 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MUSICPRO_APP.SiteMaster" %>
 
-<!DOCTYPE html>
+<!doctype html>
+<html>
 
-<html lang="es">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Mi aplicación ASP.NET</title>
-
-    <asp:PlaceHolder runat="server">
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>MUSICPRO</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="Content/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
-    <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
 </head>
-<body>
+
+<body oncontextmenu='return false' class='snippet-body'>
     <form runat="server">
-        <asp:ScriptManager runat="server">
-            <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
-            </Scripts>
-        </asp:ScriptManager>
-        <script src="Scripts/pop_pup.js"></script>
-        <link href="Content/pop_pup.css" rel="stylesheet" />
-         <header class="navbar-menu">
-             <a class="navbar-item header-logo">
-            <img src="img/logotipo-blanco.png" alt="">
-             </a>
-        <div class="navbar-end">
-
-            <a class="navbar-item" href="Default.aspx">
-                Home
-            </a>
-            <a class="navbar-item" href="search.aspx">
-                productos
-            </a>
-            <a  href="update.aspx" class="navbar-item">
-                actualizar
-            </a>
-            <a href="actualizar.aspx" class="navbar-item">
-                eliminar
-            </a>
-             <button id="popup" class="navbar-item" runat="server">Login</button>
-        </div>
-        </header>
-     
-        <div class="body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid pe-lg-2 p-0"> <a class="navbar-brand fw-bold fs-3" href="#">MUSICPRO</a> <button
+                    class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"> <a class="nav-link pe-3 me-4 fw-bold active" aria-current="page"
+                                href="Default.aspx">HOME</a> </li>
+                        <li class="nav-item"> <a class="nav-link pe-3 me-4 fw-bold" href="Productos.aspx" runat="server">PODUCTOS</a> </li>
+                        <li class="nav-item"> <a class="nav-link pe-3 me-4 fw-bold" href="About.aspx" runat="server">NOSOTROS</a> </li>
+                        <li class="nav-item"> <a class="nav-link pe-3 me-4 fw-bold" href="Contacto.aspx" runat="server">CONTACTOS</a> </li>
+                    </ul>
+                    <ul class="navbar-nav icons ms-auto mb-2 mb-lg-0">
+                        <li class=" nav-item pe-3"> <a href="#" class="fas fa-heart"> <span
+                                    class="num rounded-circle"></span> </a> </li>
+                        <li class=" nav-item pe-3"> <a href="#" class="fas fa-shopping-bag"> <span
+                                    class="num rounded-circle"></span> </a> </li>
+                        <li class=" nav-item"> <a class="btn btn-light" href="login.aspx"><span class="">Login</span></a><span
+                                class="fw-bold"></span> </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <br>
+    <div class="container">
+       <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Music Pro</p>
+            </footer>
+    </div>
 
+    <script type='text/javascript'
+        src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js'></script>
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            $('.owl-carousel').slick({
+                infinite: true,
+                centerMode: false,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+            });
+
+        });
+    </script>
     </form>
 </body>
 </html>
