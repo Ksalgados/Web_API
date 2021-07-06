@@ -154,10 +154,7 @@
                 </p>
                 <div class="collapse show border" id="collapseExample">
                     <ul class="list-unstyled">
-                        <li><a class="dropdown-item" href="#">Instrumentos de Cuerdas</a></li>
-                        <li><a class="dropdown-item" href="#">Percusión</a></li>
-                        <li><a class="dropdown-item" href="#">Amplificadores</a></li>
-                        <li><a class="dropdown-item" href="#">Accesorios varios</a></li>
+                     <!--   <asp:Literal id="tipos1" runat=server  text="" /> -->
                     </ul>
                 </div>
             </div>
@@ -174,16 +171,13 @@
                                         Categorias</span> <span class="fas fa-chevron-down ms-auto"></span></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-                                <li><a class="dropdown-item" href="#">Instrumentos de Cuerdas</a></li>
-                                <li><a class="dropdown-item" href="#">Percusión</a></li>
-                                <li><a class="dropdown-item" href="#">Amplificadores</a></li>
-                                <li><a class="dropdown-item" href="#">Accesorios varios</a></li>
+                                <!-- <asp:Literal id="tipos2" runat=server  text="" />  -->
                             </ul>
                         </div>
                         <div class="d-flex align-items-center w-100 h-100 ps-lg-0 ps-sm-3">
-                            <input class=" ps-md-0 ps-3"
-                                type="text" placeholder="¿Qué Necesitas?">
-                            <div class="btn btn-primary d-flex align-items-center justify-content-center">SEARCH</div>
+                             <asp:TextBox ID="txt_IdCodigo" TextMode="Number" runat="server"  CssClass="ps-md-0 ps-3"></asp:TextBox><br />
+                              <asp:Button ID="btn_buscar" runat="server" Text="Buscar..." CssClass="btn btn-primary d-flex align-items-center justify-content-center" OnClick="btn_BuscarLibro_Click" />
+                           
                         </div>
                     </div>
                     <div class="d-flex align-items-center ms-lg-auto mt-lg-0 mt-3 pe-2">
@@ -199,106 +193,9 @@
                     <section id="products">
                         <div class="container py-3">
                             <div class="row">
-                                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="https://www.freepnglogos.com/uploads/cucumber-png/cucumber-png-image-purepng-transparent-png-26.png">
-                                        <div class="card-body">
-                                            <h6 class="font-weight-bold pt-1">Product title</h6>
-                                            <div class="text-muted description">Space for small product description</div>
-                                            <div class="d-flex align-items-center justify-content-between pt-3">
-                                                <div class="d-flex flex-column">
-                                                    <div class="h6 font-weight-bold">36.99 USD</div>
-                                                </div>
-                                                <div class="btn btn-primary">Comprar Ahora</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-md-0 pt-4">
-                                    <div class="card">
-                                        <img class="card-img-top" src="https://www.freepnglogos.com/uploads/carrot-png/carrot-mint-with-turmeric-chia-equine-pure-delights-12.png">
-                                        <div class="card-body">
-                                            <h6 class="font-weight-bold pt-1">Product title</h6>
-                                            <div class="text-muted description">Space for small product description</div>
-                                            <div class="d-flex align-items-center product"><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="far fa-star"></span></div>
-                                            <div class="d-flex align-items-center justify-content-between pt-3">
-                                                <div class="d-flex flex-column">
-                                                    <div class="h6 font-weight-bold">36.99 USD</div>
-                                                    <div class="text-muted rebate">48.56</div>
-                                                </div>
-                                                <div class="btn btn-primary">Comprar Ahora</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-0 pt-4">
-                                    <div class="card">
-                                        <img class="card-img-top" src="https://www.freepnglogos.com/uploads/tomato-png/tomato-bunch-fresh-tomatoes-png-image-pngpix-24.png">
-                                        <div class="card-body">
-                                            <h6 class="font-weight-bold pt-1">Product title</h6>
-                                            <div class="text-muted description">Space for small product description</div>
-                                            <div class="d-flex align-items-center product"><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="far fa-star"></span></div>
-                                            <div class="d-flex align-items-center justify-content-between pt-3">
-                                                <div class="d-flex flex-column">
-                                                    <div class="h6 font-weight-bold">36.99 USD</div>
-                                                    <div class="text-muted rebate">48.56</div>
-                                                </div>
-                                                <div class="btn btn-primary">Comprar Ahora</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
-                                    <div class="card">
-                                        <img class="card-img-top" src="https://www.freepnglogos.com/uploads/grapes-png/grapes-grape-red-transparent-png-stickpng-5.png">
-                                        <div class="card-body">
-                                            <h6 class="font-weight-bold pt-1">Product title</h6>
-                                            <div class="text-muted description">Space for small product description</div>
-                                            <div class="d-flex align-items-center product"><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="far fa-star"></span></div>
-                                            <div class="d-flex align-items-center justify-content-between pt-3">
-                                                <div class="d-flex flex-column">
-                                                    <div class="h6 font-weight-bold">36.99 USD</div>
-                                                    <div class="text-muted rebate">48.56</div>
-                                                </div>
-                                                <div class="btn btn-primary">Comprar Ahora</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
-                                    <div class="card">
-                                        <img class="card-img-top" src="https://www.freepnglogos.com/uploads/cucumber-png/cucumber-png-image-purepng-transparent-png-26.png">
-                                        <div class="card-body">
-                                            <h6 class="font-weight-bold pt-1">Product title</h6>
-                                            <div class="text-muted description">Space for small product description</div>
-                                            <div class="d-flex align-items-center product"><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="far fa-star"></span></div>
-                                            <div class="d-flex align-items-center justify-content-between pt-3">
-                                                <div class="d-flex flex-column">
-                                                    <div class="h6 font-weight-bold">36.99 USD</div>
-                                                    <div class="text-muted rebate">48.56</div>
-                                                </div>
-                                                <div class="btn btn-primary">Comprar Ahora</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
-                                    <div class="card">
-                                        <img class="card-img-top" src="https://www.freepnglogos.com/uploads/watermelon-png/watermelon-gea-products-2.png">
-                                        <div class="card-body">
-                                            <h6 class="font-weight-bold pt-1">Product title</h6>
-                                            <div class="text-muted description">Space for small product description</div>
-                                            <div class="d-flex align-items-center product"><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="far fa-star"></span></div>
-                                            <div class="d-flex align-items-center justify-content-between pt-3">
-                                                <div class="d-flex flex-column">
-                                                    <div class="h6 font-weight-bold">36.99 USD</div>
-                                                    <div class="text-muted rebate">48.56</div>
-                                                </div>
-                                                <div class="btn btn-primary">Comprar Ahora</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+                             <asp:Literal id="productos" runat=server  text=" " />
+                               
                             </div>
                         </div>
                     </section>

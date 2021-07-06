@@ -126,6 +126,12 @@
     <Content Include="About.aspx" />
     <Content Include="Actualizar.aspx" />
     <Content Include="add.aspx" />
+    <Content Include="Administrador\dashboard_admin.aspx" />
+    <Content Include="Administrador\Empleados.aspx" />
+    <Content Include="Administrador\Informes.aspx" />
+    <Content Include="Administrador\Productos.aspx" />
+    <Content Include="Bodegero\dashboard_bodegero.aspx" />
+    <Content Include="Bodegero\Productos.aspx" />
     <None Include="Connected Services\Serivicios\Servicio.disco" />
     <None Include="Connected Services\Serivicios\configuration91.svcinfo" />
     <None Include="Connected Services\Serivicios\configuration.svcinfo" />
@@ -133,12 +139,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Administrador\dashboard_admin.aspx" />
-    <Content Include="Administrador\Empleados.aspx" />
-    <Content Include="Administrador\Informes.aspx" />
-    <Content Include="Administrador\Productos.aspx" />
-    <Content Include="Bodegero\dashboard_bodegero.aspx" />
-    <Content Include="Bodegero\Productos.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="Contador\Dashboard_contador.aspx" />
     <Content Include="Contador\Pagos.aspx" />
