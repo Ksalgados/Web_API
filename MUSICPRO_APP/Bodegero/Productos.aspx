@@ -297,6 +297,148 @@
                 font-size: 24px;
             }
         }
+
+                products {
+            width: 75%;
+            padding-left: 30px;
+            margin: 0;
+            float: right
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer
+        }
+
+        .card-body {
+            padding: 0.5rem
+        }
+
+            .card-body .description {
+                font-size: 0.78rem;
+                padding-bottom: 8px
+            }
+
+        div.h6,
+        h6 {
+            margin: 0
+        }
+
+        .product .fa-star {
+            font-size: 0.9rem
+        }
+
+        .rebate {
+            font-size: 0.9rem
+        }
+
+
+        img {
+            width: 192px;
+            height: 132px;
+            object-fit: contain
+        }
+
+        .clear {
+            clear: both
+        }
+
+        .btn.btn-success {
+            visibility: hidden
+        }
+
+        @media(min-width:992px) {
+
+            .filter,
+            #mobile-filter {
+                display: none
+            }
+        }
+
+        @media(min-width:768px) and (max-width:991px) {
+
+            .radio,
+            .checkbox {
+                padding: 6px 10px;
+                width: 49%;
+                float: left;
+                margin: 5px 5px 5px 0px
+            }
+
+            .filter,
+            #mobile-filter {
+                display: none
+            }
+        }
+
+        @media(min-width:576px) and (max-width:767px) {
+            #sidebar {
+                width: 35%
+            }
+
+            #products {
+                width: 65%
+            }
+
+            .filter,
+            #mobile-filter {
+                display: none
+            }
+
+            .h3 + .ml-auto {
+                margin: 0
+            }
+        }
+
+        @media(max-width:575px) {
+            .wrapper {
+                padding: 10px
+            }
+
+            .h3 {
+                font-size: 1.3rem
+            }
+
+            #sidebar {
+                display: none
+            }
+
+            #products {
+                width: 100%;
+                float: none
+            }
+
+            #products {
+                padding: 0
+            }
+
+            .clear {
+                float: left;
+                width: 80%
+            }
+
+            .btn.btn-success {
+                visibility: visible;
+                margin: 10px 0px;
+                color: #fff;
+                padding: 0.2rem 0.1rem;
+                width: 20%
+            }
+
+            .green-label {
+                width: 50%
+            }
+
+            .btn.text-success {
+                padding: 0
+            }
+
+            .content,
+            #mobile-filter {
+                clear: both
+            }
+        }
     </style>
 </head>
 
@@ -349,8 +491,8 @@
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div>
-                <a href="inicio.html" class="nav_logo"><img src="Content/logo.png" style="width:30px; height:30px;" /><span
-                        class="nav_logo-name">MusicPro</span> </a>
+                <a href="Productos.aspx" class="nav_logo"><img src="https://i.imgur.com/hczKIze.jpg" style="width:30px; height:30px;" /><span
+                        class="nav_logo-name">Bodeguero</span> </a>
                 <div class="nav_list">
                    <a href="Productos.aspx" class="nav_link"><i class='bx bx-briefcase nav_icon'></i><span
                             class="nav_name">Productos</span> </a>
@@ -359,6 +501,99 @@
             <a href="index.html" class="nav_link"><i class='bx bx-log-out nav_icon'></i><span
                     class="nav_name">SignOut</span> </a>
         </nav>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class=" d-lg-flex flex-lg-row d-flex flex-column-reverse bg-light mt-5">
+                    <section id="products">
+                        <div class="container py-3">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-0 pt-4">
+                                    <div class="card">
+                                        <img class="card-img-top" src="https://images.promusic.cl/uploads/2020-07/bulletmustangbk2.jpg520x520.r.jpg">
+                                        <div class="card-body">
+                                            <h6 class="font-weight-bold pt-1">Guitarras Cuerpo Solido</h6>
+                                            <div class="text-muted description">Guitarras Cuerpo Solido</div>
+                                            <div class="d-flex align-items-center product"><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="far fa-star"></span></div>
+                                            <div class="d-flex align-items-center justify-content-between pt-3">            
+                                                <div class="btn btn-primary">Aceptar Orden</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-md-0 pt-4">
+                                    <div class="card">
+                                        <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/71Oo2ZKroFL._AC_SL1500_.jpg">
+                                        <div class="card-body">
+                                            <h6 class="font-weight-bold pt-1">Guitarras Eléctricas</h6>
+                                            <div class="text-muted description">Guitarras Eléctricas</div>
+                                            <div class="d-flex align-items-center product"><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="far fa-star"></span></div>
+                                            <div class="d-flex align-items-center justify-content-between pt-3">
+                                                <div class="btn btn-danger">Despachar</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-0 pt-4">
+                                    <div class="card">
+                                        <img class="card-img-top" src="https://www.maneimport.com/wp-content/uploads/2020/06/ibaanezgio.jpg">
+                                        <div class="card-body">
+                                            <h6 class="font-weight-bold pt-1">Bajos Cinco Cuerdas</h6>
+                                            <div class="text-muted description">Bajos Cinco Cuerdas</div>
+                                            <div class="d-flex align-items-center product"><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="far fa-star"></span></div>
+                                            <div class="d-flex align-items-center justify-content-between pt-3">        
+                                                <div class="btn btn-primary">Aceptar Orden</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
+                                    <div class="card">
+                                        <img class="card-img-top" src="http://laguiadelpiano.com/wp-content/uploads/2015/11/bluthner-grand.jpg">
+                                        <div class="card-body">
+                                            <h6 class="font-weight-bold pt-1">Piano de media cola</h6>
+                                            <div class="text-muted description">Piano de media cola</div>
+                                            <div class="d-flex align-items-center product"><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="far fa-star"></span></div>
+                                            <div class="d-flex align-items-center justify-content-between pt-3">          
+                                                <div class="btn btn-primary">Aceptar Orden</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
+                                    <div class="card">
+                                        <img class="card-img-top" src="https://www.sagaspercusion.cl/images/yamaha-rydeen-kit-22-hot-red-hardware.jpg">
+                                        <div class="card-body">
+                                            <h6 class="font-weight-bold pt-1">Baterías Acústicas</h6>
+                                            <div class="text-muted description">Baterías Acústicas</div>
+                                            <div class="d-flex align-items-center product"><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="far fa-star"></span></div>
+                                            <div class="d-flex align-items-center justify-content-between pt-3">
+                                                <div class="btn btn-danger">Despachar</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
+                                    <div class="card">
+                                        <img class="card-img-top" src="https://amplificadores.de/wp-content/uploads/2018/12/amplificador-cabezal.jpg">
+                                        <div class="card-body">
+                                            <h6 class="font-weight-bold pt-1">Amplificadores Cabezales</h6>
+                                            <div class="text-muted description">Amplificadores Cabezales</div>
+                                            <div class="d-flex align-items-center product"><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span><span class="far fa-star"></span></div>
+                                            <div class="d-flex align-items-center justify-content-between pt-3">
+                                                <div class="btn btn-danger">Despachar</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
     </div>
     
 </body>
